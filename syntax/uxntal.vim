@@ -26,6 +26,7 @@ syntax match talMacro display "%\k*"
 
 syntax match talKeyword display "\<BRK\(k\|r\|2\)*\>"
 syntax match talKeyword display "\<LIT\(k\|r\|2\)*\>"
+syntax match talKeyword display "\<INC\(k\|r\|2\)*\>"
 syntax match talKeyword display "\<NIP\(k\|r\|2\)*\>"
 syntax match talKeyword display "\<POP\(k\|r\|2\)*\>"
 syntax match talKeyword display "\<DUP\(k\|r\|2\)*\>"
