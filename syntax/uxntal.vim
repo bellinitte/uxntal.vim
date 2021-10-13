@@ -30,8 +30,8 @@ syntax match uxntalString "\<\"\S*"hs=s+1
 
 syntax match uxntalChar "\<'\S*"hs=s+1
 
-syntax match uxntalLiteralNumber "\<\(#\||\|\$\)\S*"hs=s+1
-syntax match uxntalRawNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
+syntax match uxntalNumber "\<\(#\||\|\$\)\S*"hs=s+1
+syntax match uxntalNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
 
 syntax match uxntalInclude "\<include\>" nextgroup=uxntalIncludePath skipwhite skipempty
 syntax match uxntalIncludePath "\S\+" contained
@@ -48,8 +48,7 @@ highlight default link uxntalAddressLabel    Type
 highlight default link uxntalAddressSublabel uxntalAddressLabel
 highlight default link uxntalString          String
 highlight default link uxntalChar            Character
-highlight default link uxntalLiteralNumber   Number
-highlight default link uxntalRawNumber       Number
+highlight default link uxntalNumber          Number
 highlight default link uxntalInclude         Keyword
 highlight default link uxntalIncludePath     Constant
 highlight default link uxntalMnemonic        Keyword
