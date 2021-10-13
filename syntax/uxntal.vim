@@ -1,80 +1,58 @@
 " Vim syntax file
-" Language: Uxntal
-" Maintainer: Karol Belina
-" Version: v0.1.0
+" Language:   Uxntal
+" Maintainer: Karol Belina <karolbelina@gmail.com>
+" Version:    v0.1.1
+" For bugs, patches and license go to https://github.com/karolbelina/uxntal.vim
 
 if exists("b:current_syntax")
   finish
 endif
 
-syntax iskeyword @,33-39,42-90,92,94-122,124,126-255
+syntax iskeyword @,33-255
 
-syntax match talMacro display "\<\k\+\>"
+syntax match uxntalMacro display "\<\S\+"
 
-syntax match talIdentifier display "\<\.\k*\>"
-syntax match talIdentifier display "\<\,\k*\>"
-syntax match talIdentifier display "\<\:\k*\>"
-syntax match talIdentifier display "\<\;\k*\>"
+syntax match uxntalMacro "\<%\S*"hs=s+1
 
-syntax match talLabel display "\<@\k*\>"
-syntax match talLabel display "\<&\k*\>"
+syntax match uxntalBracket "\<\({\|}\|\[\|\]\|)\)\S*"
 
-syntax match talString display "\"\S*"
-syntax match talString display "'\S*"
+syntax match uxntalLabel "\<@[^/[:space:]]*"hs=s+1 nextgroup=uxntalLabel
+syntax match uxntalLabel "/\S*"hs=s+1 contained
 
-syntax match talMacro display "%\k*"
+syntax match uxntalSublabel "\<&\S*"hs=s+1
 
-syntax match talKeyword display "\<BRK\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<LIT\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<INC\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<NIP\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<POP\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<DUP\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<SWP\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<OVR\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<ROT\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<EQU\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<NEQ\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<GTH\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<LTH\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<JMP\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<JCN\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<JSR\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<STH\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<LDZ\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<STZ\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<LDR\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<STR\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<LDA\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<STA\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<DEI\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<DEO\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<ADD\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<SUB\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<MUL\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<DIV\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<AND\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<ORA\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<EOR\(k\|r\|2\)*\>"
-syntax match talKeyword display "\<SFT\(k\|r\|2\)*\>"
+syntax match uxntalAddressLabel "\<[.,:;][^/[:space:]]*"hs=s+1 nextgroup=uxntalAddressLabel
+syntax match uxntalAddressLabel "/\S*"hs=s+1 contained
 
-syntax match talHexInt display "\<#[0-9a-f]*\>"
-syntax match talHexInt display "\<|[0-9a-f]*\>"
-syntax match talHexInt display "\<$[0-9a-f]*\>"
-syntax match talHexInt display "\<[0-9a-f]\{2\}\>"
-syntax match talHexInt display "\<[0-9a-f]\{4\}\>"
+syntax match uxntalAddressSublabel "\<[.,:;]&\S*"hs=s+2
 
-syntax keyword talCommentTodo contained TODO FIXME NOTE XXX
+syntax match uxntalString "\<\"\S*"hs=s+1
 
-syntax region talComment start="(" end=")" contains=talCommentTodo,talComment
+syntax match uxntalChar "\<'\S*"hs=s+1
 
-highlight default link talKeyword     Keyword
-highlight default link talLabel       Function
-highlight default link talIdentifier  Type
-highlight default link talHexInt      Number
-highlight default link talString      String
-highlight default link talMacro       Macro
-highlight default link talComment     Comment
-highlight default link talCommentTodo Todo
+syntax match uxntalLiteralNumber "\<\(#\||\|\$\)\S*"hs=s+1
+syntax match uxntalRawNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
+
+syntax match uxntalInclude "\<include\>" nextgroup=uxntalIncludePath skipwhite skipempty
+syntax match uxntalIncludePath "\S\+" contained
+
+syntax match uxntalMnemonic "\<BRK\>"
+syntax match uxntalMnemonic "\<\(LIT\|INC\|POP\|DUP\|NIP\|SWP\|OVR\|ROT\|EQU\|NEQ\|GTH\|LTH\|JMP\|JCN\|JSR\|STH\|LDZ\|STZ\|LDR\|STR\|LDA\|STA\|DEI\|DEO\|ADD\|SUB\|MUL\|DIV\|AND\|ORA\|EOR\|SFT\)[kr2]*\>"
+
+syntax region uxntalComment start="\<(\S*" end="\<)\S*"
+
+highlight default link uxntalMacro           Macro
+highlight default link uxntalLabel           Function
+highlight default link uxntalSublabel        uxntalLabel
+highlight default link uxntalAddressLabel    Type
+highlight default link uxntalAddressSublabel uxntalAddressLabel
+highlight default link uxntalString          String
+highlight default link uxntalChar            Character
+highlight default link uxntalLiteralNumber   Number
+highlight default link uxntalRawNumber       Number
+highlight default link uxntalInclude         Keyword
+highlight default link uxntalIncludePath     Constant
+highlight default link uxntalMnemonic        Keyword
+highlight default link uxntalComment         Comment
 
 let b:current_syntax = "uxntal"
