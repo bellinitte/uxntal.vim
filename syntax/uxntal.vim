@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language:   Uxntal
 " Maintainer: Karol Belina <karolbelina@gmail.com>
-" Version:    v0.1.1
-" For bugs, patches and license go to https://github.com/karolbelina/uxntal.vim
+" Version:    v0.1.2
+" For bugs, patches and license visit https://github.com/karolbelina/uxntal.vim
 
 if exists("b:current_syntax")
   finish
@@ -33,8 +33,7 @@ syntax match uxntalChar "\<'\S*"hs=s+1
 syntax match uxntalNumber "\<\(#\||\|\$\)\S*"hs=s+1
 syntax match uxntalNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
 
-syntax match uxntalInclude "\<include\>" nextgroup=uxntalIncludePath skipwhite skipempty
-syntax match uxntalIncludePath "\S\+" contained
+syntax match uxntalInclude "\<\~\S*"hs=s+1
 
 syntax match uxntalMnemonic "\<BRK\>"
 syntax match uxntalMnemonic "\<\(LIT\|INC\|POP\|DUP\|NIP\|SWP\|OVR\|ROT\|EQU\|NEQ\|GTH\|LTH\|JMP\|JCN\|JSR\|STH\|LDZ\|STZ\|LDR\|STR\|LDA\|STA\|DEI\|DEO\|ADD\|SUB\|MUL\|DIV\|AND\|ORA\|EOR\|SFT\)[kr2]*\>"
@@ -49,8 +48,7 @@ highlight default link uxntalAddressSublabel uxntalAddressLabel
 highlight default link uxntalString          String
 highlight default link uxntalChar            Character
 highlight default link uxntalNumber          Number
-highlight default link uxntalInclude         Keyword
-highlight default link uxntalIncludePath     Constant
+highlight default link uxntalInclude         Constant
 highlight default link uxntalMnemonic        Keyword
 highlight default link uxntalComment         Comment
 
