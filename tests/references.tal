@@ -2,6 +2,9 @@
 ,label ,&sublabel
 ;label ;&sublabel
 :label :&sublabel
+-label -&sublabel
+=label =&sublabel
+_label _&sublabel
 
 .label-label
 .label-la/bel ( `/` highlighted )

@@ -22,6 +22,24 @@
        ^ Operator
         ^ Operator
          ^^^^^^^^ Type
+-label -&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
+=label =&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
+_label _&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
 
 .label-label
 ^ Operator
