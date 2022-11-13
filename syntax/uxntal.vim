@@ -10,46 +10,81 @@ endif
 
 syntax iskeyword @,33-255
 
+syntax match uxntalComment "\S*" contained containedin=uxntalCommentRegion,uxntalMacroCommentRegion
+
 syntax match uxntalMacro display "\<\S\+"
+syntax match uxntalRawNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
+syntax match uxntalMnemonic "\<\(BRK\|\(LIT\|INC\|POP\|DUP\|NIP\|SWP\|OVR\|ROT\|EQU\|NEQ\|GTH\|LTH\|JMP\|JCN\|JSR\|STH\|LDZ\|STZ\|LDR\|STR\|LDA\|STA\|DEI\|DEO\|ADD\|SUB\|MUL\|DIV\|AND\|ORA\|EOR\|SFT\)[kr2]*\)\>"
 
-syntax match uxntalMacro "\<%\S*"hs=s+1
+syntax match uxntalIncludeRune "\<\~" nextgroup=uxntalInclude
+syntax match uxntalInclude "\S*" contained
+highlight default link uxntalIncludeRune uxntalRune
 
-syntax match uxntalBracket "\<\({\|}\|\[\|\]\|)\)\S*"
+syntax match uxntalMacroDefintionHeaderRune "\<%" nextgroup=uxntalMacroDefintionHeader containedin=uxntalMacroCommentRegion
+syntax match uxntalMacroDefintionHeader "\S*" contained
+highlight default link uxntalMacroDefintionHeaderRune uxntalRune
 
-syntax match uxntalLabel "\<@[^/[:space:]]*"hs=s+1 nextgroup=uxntalLabel
-syntax match uxntalLabel "/\S*"hs=s+1 contained
+syntax match uxntalMacroDefintionBrace "\<[{}]\S*" contained containedin=uxntalMacroDefintionRegion
+highlight default link uxntalMacroDefintionBrace uxntalRune
 
-syntax match uxntalSublabel "\<&\S*"hs=s+1
+syntax match uxntalPadRune "\<[|\$]" nextgroup=uxntalPad
+syntax match uxntalPad "\S*" contained
+highlight default link uxntalPadRune uxntalRune
 
-syntax match uxntalAddressLabel "\<[.,:;][^/[:space:]]*"hs=s+1 nextgroup=uxntalAddressLabel
-syntax match uxntalAddressLabel "/\S*"hs=s+1 contained
+syntax match uxntalLabelRune "\<@" nextgroup=uxntalLabel
+syntax match uxntalLabel "[^/[:space:]]*" contained nextgroup=uxntalLabelSlash
+syntax match uxntalLabelSlash "/" contained nextgroup=uxntalLabelSublabel
+syntax match uxntalLabelSublabel "\S*" contained
+highlight default link uxntalLabelRune uxntalRune
+highlight default link uxntalLabelSlash uxntalRune
 
-syntax match uxntalAddressSublabel "\<[.,:;]&\S*"hs=s+2
+syntax match uxntalScopedSublabelRune "\<&" nextgroup=uxntalScopedSublabel
+syntax match uxntalScopedSublabel "\S*" contained
+highlight default link uxntalScopedSublabelRune uxntalRune
 
-syntax match uxntalString "\<\"\S*"hs=s+1
+syntax match uxntalLiteralNumberRune "\<#" nextgroup=uxntalLiteralNumber
+syntax match uxntalLiteralNumber "\S*" contained
+highlight default link uxntalLiteralNumberRune uxntalRune
 
-syntax match uxntalChar "\<'\S*"hs=s+1
+syntax match uxntalReferenceRune "\<[.,:;]" nextgroup=uxntalReferenceLabel,uxntalReferenceScopedSublabelRune
+syntax match uxntalReferenceLabel "[^/[:space:]]*" contained nextgroup=uxntalReferenceLabelSlash
+syntax match uxntalReferenceLabelSlash "/" contained nextgroup=uxntalReferenceLabelSublabel
+syntax match uxntalReferenceLabelSublabel "\S*" contained
+syntax match uxntalReferenceScopedSublabelRune "&" contained nextgroup=uxntalReferenceScopedSublabel
+syntax match uxntalReferenceScopedSublabel "\S*" contained
+highlight default link uxntalReferenceRune uxntalRune
+highlight default link uxntalReferenceLabelSlash uxntalRune
+highlight default link uxntalReferenceScopedSublabelRune uxntalRune
 
-syntax match uxntalNumber "\<\(#\||\|\$\)\S*"hs=s+1
-syntax match uxntalNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
+syntax match uxntalStringRune "\<\"" nextgroup=uxntalString
+syntax match uxntalString "\S*" contained
+highlight default link uxntalStringRune uxntalRune
 
-syntax match uxntalInclude "\<\~\S*"hs=s+1
+syntax match uxntalBracket "\<[\[\]]\>"
+highlight default link uxntalBracket uxntalRune
 
-syntax match uxntalMnemonic "\<BRK\>"
-syntax match uxntalMnemonic "\<\(LIT\|INC\|POP\|DUP\|NIP\|SWP\|OVR\|ROT\|EQU\|NEQ\|GTH\|LTH\|JMP\|JCN\|JSR\|STH\|LDZ\|STZ\|LDR\|STR\|LDA\|STA\|DEI\|DEO\|ADD\|SUB\|MUL\|DIV\|AND\|ORA\|EOR\|SFT\)[kr2]*\>"
+syntax region uxntalCommentRegion matchgroup=uxntalComment start="\<(\S*" end="\<)\>" fold
+syntax region uxntalCommentRegion matchgroup=uxntalComment start="\<(\>" end="\<)\>" fold contained containedin=uxntalCommentRegion
 
-syntax region uxntalComment start="\<(\S*" end="\<)\S*"
+syntax region uxntalMacroDefintionRegion start="\<%\S*" end="\<}\S*" fold keepend transparent
+syntax region uxntalMacroCommentRegion matchgroup=uxntalComment start="\<(\S*" end="\<)\>" matchgroup=uxntalMacroDefintionBrace end="\<}\S*" fold contained containedin=uxntalMacroDefintionRegion
+syntax region uxntalMacroCommentRegion matchgroup=uxntalComment start="\<(\>" end="\<)\>" matchgroup=uxntalMacroDefintionBrace end="\<}\S*" fold contained containedin=uxntalMacroCommentRegion
 
-highlight default link uxntalMacro           Macro
-highlight default link uxntalLabel           Function
-highlight default link uxntalSublabel        uxntalLabel
-highlight default link uxntalAddressLabel    Type
-highlight default link uxntalAddressSublabel uxntalAddressLabel
-highlight default link uxntalString          String
-highlight default link uxntalChar            Character
-highlight default link uxntalNumber          Number
-highlight default link uxntalInclude         Constant
-highlight default link uxntalMnemonic        Keyword
-highlight default link uxntalComment         Comment
+highlight default link uxntalRune                    Operator
+highlight default link uxntalComment                 Comment
+highlight default link uxntalMacroDefintionHeader    Special
+highlight default link uxntalInclude                 String
+highlight default link uxntalPad                     Number
+highlight default link uxntalLabel                   Function
+highlight default link uxntalLabelSublabel           Function
+highlight default link uxntalScopedSublabel          Function
+highlight default link uxntalLiteralNumber           Number
+highlight default link uxntalReferenceLabel          Type
+highlight default link uxntalReferenceLabelSublabel  Type
+highlight default link uxntalReferenceScopedSublabel Type
+highlight default link uxntalString                  String
+highlight default link uxntalMnemonic                Keyword
+highlight default link uxntalRawNumber               Number
+highlight default link uxntalMacro                   Macro
 
 let b:current_syntax = "uxntal"
