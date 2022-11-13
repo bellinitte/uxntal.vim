@@ -1,0 +1,149 @@
+x ( x ) x
+^ Macro
+  ^ Comment
+    ^ Comment
+      ^ Comment
+        ^ Macro
+x (x x ) x
+^ Macro
+  ^^ Comment
+     ^ Comment
+       ^ Comment
+         ^ Macro
+x ( x )x ) x
+^ Macro
+  ^ Comment
+    ^ Comment
+      ^^ Comment
+         ^ Comment
+           ^ Macro
+x (x) x )x()() x ) x
+^ Macro
+  ^^^ Comment
+      ^ Comment
+        ^^^^^^ Comment
+               ^ Comment
+                 ^ Comment
+                   ^ Macro
+x (x) x)X )x()() x ) x
+^ Macro
+  ^^^ Comment
+      ^^^ Comment
+          ^^^^^^ Comment
+                 ^ Comment
+                   ^ Comment
+                     ^ Macro
+(
+^ Comment
+    BRK LIT2kr @label/label &sublabel
+    ^^^ Comment
+        ^^^^^^ Comment
+               ^^^^^^^^^^^^ Comment
+                            ^^^^^^^^^ Comment
+    .label #12 #abcd $1 |100 ~lib.tal
+    ^^^^^^ Comment
+           ^^^ Comment
+               ^^^^^ Comment
+                     ^^ Comment
+                        ^^^^ Comment
+                             ^^^^^^^^ Comment
+    "string %MACRO { } [ ]
+    ^^^^^^^ Comment
+            ^^^^^^ Comment
+                   ^ Comment
+                     ^ Comment
+                       ^ Comment
+                         ^ Comment
+)
+^ Comment
+
+X( x )X ) x
+^^ Macro
+   ^ Macro
+     ^^ Macro
+        ^ Macro
+          ^ Macro
+
+( Nested comments )
+^ Comment
+  ^^^^^^ Comment
+         ^^^^^^^^ Comment
+                  ^ Comment
+x ( x ( x ) x ) x
+^ Macro
+  ^ Comment
+    ^ Comment
+      ^ Comment
+        ^ Comment
+          ^ Comment
+            ^ Comment
+              ^ Comment
+                ^ Macro
+x (x x ( x ) x ) x
+^ Macro
+  ^^ Comment
+     ^ Comment
+       ^ Comment
+         ^ Comment
+           ^ Comment
+             ^ Comment
+               ^ Comment
+                 ^ Macro
+x ( x ( x )x x ) x ) x
+^ Macro
+  ^ Comment
+    ^ Comment
+      ^ Comment
+        ^ Comment
+          ^^ Comment
+             ^ Comment
+               ^ Comment
+                 ^ Comment
+                   ^ Comment
+                     ^ Macro
+x (x x ( x )x x ) x ) x
+^ Macro
+  ^^ Comment
+     ^ Comment
+       ^ Comment
+         ^ Comment
+           ^^ Comment
+              ^ Comment
+                ^ Comment
+                  ^ Comment
+                    ^ Comment
+                      ^ Macro
+
+( Not nested -- inner comment doesn't start with a `(` )
+^ Comment
+  ^^^ Comment
+      ^^^^^^ Comment
+             ^^ Comment
+                ^^^^^ Comment
+                      ^^^^^^^ Comment
+                              ^^^^^^^ Comment
+                                      ^^^^^ Comment
+                                            ^^^^ Comment
+                                                 ^ Comment
+                                                   ^^^ Comment
+                                                       ^ Comment
+x ( x (x x ) x ) x
+^ Macro
+  ^ Comment
+    ^ Comment
+      ^^ Comment
+         ^ Comment
+           ^ Comment
+             ^ Macro
+               ^ Macro
+                 ^ Macro
+x (x x (x x ) x ) x
+^ Macro
+  ^^ Comment
+     ^ Comment
+       ^^ Comment
+          ^ Comment
+            ^ Comment
+              ^ Macro
+                ^ Macro
+                  ^ Macro

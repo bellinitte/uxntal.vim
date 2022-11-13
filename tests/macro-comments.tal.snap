@@ -1,0 +1,360 @@
+%MACRO { x ( x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^ Comment
+                 ^ Macro
+                   ^ Operator
+%MACRO { x (x x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^ Comment
+                  ^ Macro
+                    ^ Operator
+%MACRO { x (x x )x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^^ Comment
+                   ^ Comment
+                     ^ Macro
+                       ^ Operator
+%MACRO { x (x) x )x()() x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^^ Comment
+               ^ Comment
+                 ^^^^^^ Comment
+                        ^ Comment
+                          ^ Comment
+                            ^ Macro
+                              ^ Operator
+%MACRO { x (x) x)X )x()() x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^^ Comment
+               ^^^ Comment
+                   ^^^^^^ Comment
+                          ^ Comment
+                            ^ Comment
+                              ^ Macro
+                                ^ Operator
+%MACRO { x (
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+    BRK LIT2kr @label/label &sublabel
+    ^^^ Comment
+        ^^^^^^ Comment
+               ^^^^^^^^^^^^ Comment
+                            ^^^^^^^^^ Comment
+    .label #12 #abcd $1 |100 ~lib.tal
+    ^^^^^^ Comment
+           ^^^ Comment
+               ^^^^^ Comment
+                     ^^ Comment
+                        ^^^^ Comment
+                             ^^^^^^^^ Comment
+    "string [ ]
+    ^^^^^^^ Comment
+            ^ Comment
+              ^ Comment
+) x }
+^ Comment
+  ^ Macro
+    ^ Operator
+
+%MACRO { X( x )X ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^^ Macro
+            ^ Macro
+              ^^ Macro
+                 ^ Macro
+                   ^ Macro
+                     ^ Operator
+
+( Nested comments )
+^ Comment
+  ^^^^^^ Comment
+         ^^^^^^^^ Comment
+                  ^ Comment
+%MACRO { x ( x ( x ) x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^ Comment
+                 ^ Comment
+                   ^ Comment
+                     ^ Comment
+                       ^ Comment
+                         ^ Macro
+                           ^ Operator
+%MACRO { x (x x ( x ) x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^ Comment
+                  ^ Comment
+                    ^ Comment
+                      ^ Comment
+                        ^ Comment
+                          ^ Macro
+                            ^ Operator
+%MACRO { x ( x ( x )x x ) x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^ Comment
+                 ^ Comment
+                   ^^ Comment
+                      ^ Comment
+                        ^ Comment
+                          ^ Comment
+                            ^ Comment
+                              ^ Macro
+                                ^ Operator
+%MACRO { x (x x ( x )x x ) x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^ Comment
+                  ^ Comment
+                    ^^ Comment
+                       ^ Comment
+                         ^ Comment
+                           ^ Comment
+                             ^ Comment
+                               ^ Macro
+                                 ^ Operator
+%MACRO { x ( x ( x ( x ) x ) x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^ Comment
+                 ^ Comment
+                   ^ Comment
+                     ^ Comment
+                       ^ Comment
+                         ^ Comment
+                           ^ Comment
+                             ^ Comment
+                               ^ Comment
+                                 ^ Macro
+                                   ^ Operator
+
+( Not nested -- inner comment doesn't start with a `(` )
+^ Comment
+  ^^^ Comment
+      ^^^^^^ Comment
+             ^^ Comment
+                ^^^^^ Comment
+                      ^^^^^^^ Comment
+                              ^^^^^^^ Comment
+                                      ^^^^^ Comment
+                                            ^^^^ Comment
+                                                 ^ Comment
+                                                   ^^^ Comment
+                                                       ^ Comment
+%MACRO { x ( x (x x ) x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^^ Comment
+                  ^ Comment
+                    ^ Comment
+                      ^ Macro
+                        ^ Macro
+                          ^ Macro
+                            ^ Operator
+%MACRO { x (x x (x x ) x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^^ Comment
+                   ^ Comment
+                     ^ Comment
+                       ^ Macro
+                         ^ Macro
+                           ^ Macro
+                             ^ Operator
+%MACRO { x (x x (x )x ) x } x
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^^ Comment
+                   ^^ Comment
+                      ^ Comment
+                        ^ Macro
+                          ^ Operator
+                            ^ Macro
+%MACRO { x (x x (x x ) x } x
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^^ Comment
+                   ^ Comment
+                     ^ Comment
+                       ^ Macro
+                         ^ Operator
+                           ^ Macro
+
+( Unclosed comments )
+^ Comment
+  ^^^^^^^^ Comment
+           ^^^^^^^^ Comment
+                    ^ Comment
+%MACRO { x ( x } x
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^ Operator
+                 ^ Macro
+%MACRO { x (x x } x
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^ Operator
+                  ^ Macro
+%MACRO { x (x ( x ) x } x
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^^ Comment
+              ^ Comment
+                ^ Comment
+                  ^ Comment
+                    ^ Comment
+                      ^ Operator
+                        ^ Macro
+
+( Nested macros )
+^ Comment
+  ^^^^^^ Comment
+         ^^^^^^ Comment
+                ^ Comment
+%MACRO { x ( x %NESTED x ) x } ( Nested macro definition gets highlighted )
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^ Operator
+                ^^^^^^ Special
+                       ^ Comment
+                         ^ Comment
+                           ^ Macro
+                             ^ Operator
+                               ^ Comment
+                                 ^^^^^^ Comment
+                                        ^^^^^ Comment
+                                              ^^^^^^^^^^ Comment
+                                                         ^^^^ Comment
+                                                              ^^^^^^^^^^^ Comment
+                                                                          ^ Comment
+%MACRO { x ( x ( x %NESTED x ) x ) x }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^ Comment
+                 ^ Comment
+                   ^ Operator
+                    ^^^^^^ Special
+                           ^ Comment
+                             ^ Comment
+                               ^ Comment
+                                 ^ Comment
+                                   ^ Macro
+                                     ^ Operator
+%MACRO { x ( x %NESTED { x } x
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Comment
+             ^ Comment
+               ^ Operator
+                ^^^^^^ Special
+                       ^ Comment
+                         ^ Comment
+                           ^ Operator
+                             ^ Macro
+
+( Macros in comments )
+^ Comment
+  ^^^^^^ Comment
+         ^^ Comment
+            ^^^^^^^^ Comment
+                     ^ Comment
+x ( x %MACRO { x } x ) x
+^ Macro
+  ^ Comment
+    ^ Comment
+      ^^^^^^ Comment
+             ^ Comment
+               ^ Comment
+                 ^ Comment
+                   ^ Comment
+                     ^ Comment
+                       ^ Macro
+x ( } ) x
+^ Macro
+  ^ Comment
+    ^ Comment
+      ^ Comment
+        ^ Macro

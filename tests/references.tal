@@ -1,0 +1,16 @@
+.label .&sublabel
+,label ,&sublabel
+;label ;&sublabel
+:label :&sublabel
+
+.label-label
+.label-la/bel ( `/` highlighted )
+.la/bel-la/bel ( Second `/` not highlighted )
+.
+./
+.//
+
+.&sublabel-sublabel
+.&sublabel-subla/bel ( `/` not highlighted )
+.&
+.&/

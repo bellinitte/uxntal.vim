@@ -1,0 +1,39 @@
+%MACRO { x ( x ) x }
+%MACRO { x (x x ) x }
+%MACRO { x (x x )x ) x }
+%MACRO { x (x) x )x()() x ) x }
+%MACRO { x (x) x)X )x()() x ) x }
+%MACRO { x (
+    BRK LIT2kr @label/label &sublabel
+    .label #12 #abcd $1 |100 ~lib.tal
+    "string [ ]
+) x }
+
+%MACRO { X( x )X ) x }
+
+( Nested comments )
+%MACRO { x ( x ( x ) x ) x }
+%MACRO { x (x x ( x ) x ) x }
+%MACRO { x ( x ( x )x x ) x ) x }
+%MACRO { x (x x ( x )x x ) x ) x }
+%MACRO { x ( x ( x ( x ) x ) x ) x }
+
+( Not nested -- inner comment doesn't start with a `(` )
+%MACRO { x ( x (x x ) x ) x }
+%MACRO { x (x x (x x ) x ) x }
+%MACRO { x (x x (x )x ) x } x
+%MACRO { x (x x (x x ) x } x
+
+( Unclosed comments )
+%MACRO { x ( x } x
+%MACRO { x (x x } x
+%MACRO { x (x ( x ) x } x
+
+( Nested macros )
+%MACRO { x ( x %NESTED x ) x } ( Nested macro definition gets highlighted )
+%MACRO { x ( x ( x %NESTED x ) x ) x }
+%MACRO { x ( x %NESTED { x } x
+
+( Macros in comments )
+x ( x %MACRO { x } x ) x
+x ( } ) x

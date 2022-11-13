@@ -1,0 +1,25 @@
+"string
+^ Operator
+ ^^^^^^ String
+""
+^ Operator
+ ^ String
+"
+^ Operator
+
+~lib.tal
+^ Operator
+ ^^^^^^^ String
+~#abcD
+^ Operator
+ ^^^^^ String
+~
+^ Operator
+
+'char ( Removed `'` rune )
+^^^^^ Macro
+      ^ Comment
+        ^^^^^^^ Comment
+                ^^^ Comment
+                    ^^^^ Comment
+                         ^ Comment

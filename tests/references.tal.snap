@@ -1,0 +1,78 @@
+.label .&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
+,label ,&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
+;label ;&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
+:label :&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
+
+.label-label
+^ Operator
+ ^^^^^^^^^^^ Type
+.label-la/bel ( `/` highlighted )
+^ Operator
+ ^^^^^^^^ Type
+         ^ Operator
+          ^^^ Type
+              ^ Comment
+                ^^^ Comment
+                    ^^^^^^^^^^^ Comment
+                                ^ Comment
+.la/bel-la/bel ( Second `/` not highlighted )
+^ Operator
+ ^^ Type
+   ^ Operator
+    ^^^^^^^^^^ Type
+               ^ Comment
+                 ^^^^^^ Comment
+                        ^^^ Comment
+                            ^^^ Comment
+                                ^^^^^^^^^^^ Comment
+                                            ^ Comment
+.
+^ Operator
+./
+^ Operator
+ ^ Operator
+.//
+^ Operator
+ ^ Operator
+  ^ Type
+
+.&sublabel-sublabel
+^ Operator
+ ^ Operator
+  ^^^^^^^^^^^^^^^^^ Type
+.&sublabel-subla/bel ( `/` not highlighted )
+^ Operator
+ ^ Operator
+  ^^^^^^^^^^^^^^^^^^ Type
+                     ^ Comment
+                       ^^^ Comment
+                           ^^^ Comment
+                               ^^^^^^^^^^^ Comment
+                                           ^ Comment
+.&
+^ Operator
+ ^ Operator
+.&/
+^ Operator
+ ^ Operator
+  ^ Type

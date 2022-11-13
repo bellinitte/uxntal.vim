@@ -1,0 +1,172 @@
+%MACRO { }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Operator
+%! { }
+^ Operator
+ ^ Special
+   ^ Operator
+     ^ Operator
+%@ { }
+^ Operator
+ ^ Special
+   ^ Operator
+     ^ Operator
+%% { }
+^ Operator
+ ^ Special
+   ^ Operator
+     ^ Operator
+% { }
+^ Operator
+  ^ Operator
+    ^ Operator
+
+( Braces )
+^ Comment
+  ^^^^^^ Comment
+         ^ Comment
+%MACRO { }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Operator
+%MACRO{ }
+^ Operator
+ ^^^^^^ Special
+        ^ Operator
+%MACRO{x }
+^ Operator
+ ^^^^^^^ Special
+         ^ Operator
+%MACRO{x }x
+^ Operator
+ ^^^^^^^ Special
+         ^^ Operator
+%MACRO { { { } ( Multiple opening braces are part of the definition )
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Operator
+           ^ Operator
+             ^ Operator
+               ^ Comment
+                 ^^^^^^^^ Comment
+                          ^^^^^^^ Comment
+                                  ^^^^^^ Comment
+                                         ^^^ Comment
+                                             ^^^^ Comment
+                                                  ^^ Comment
+                                                     ^^^ Comment
+                                                         ^^^^^^^^^^ Comment
+                                                                    ^ Comment
+%MACRO { } } } ( Only one closing brace is a part of the definition )
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Operator
+           ^ Macro
+             ^ Macro
+               ^ Comment
+                 ^^^^ Comment
+                      ^^^ Comment
+                          ^^^^^^^ Comment
+                                  ^^^^^ Comment
+                                        ^^ Comment
+                                           ^ Comment
+                                             ^^^^ Comment
+                                                  ^^ Comment
+                                                     ^^^ Comment
+                                                         ^^^^^^^^^^ Comment
+                                                                    ^ Comment
+%MACRO { { } }
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Operator
+           ^ Operator
+             ^ Macro
+{ } ( Braces outside of a macro definition )
+^ Macro
+  ^ Macro
+    ^ Comment
+      ^^^^^^ Comment
+             ^^^^^^^ Comment
+                     ^^ Comment
+                        ^ Comment
+                          ^^^^^ Comment
+                                ^^^^^^^^^^ Comment
+                                           ^ Comment
+x{ x}
+^^ Macro
+   ^^ Macro
+
+%MACRO { x %NESTED { x } x } ( Last closing brace is not a part of the definition )
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+         ^ Macro
+           ^ Operator
+            ^^^^^^ Special
+                   ^ Operator
+                     ^ Macro
+                       ^ Operator
+                         ^ Macro
+                           ^ Macro
+                             ^ Comment
+                               ^^^^ Comment
+                                    ^^^^^^^ Comment
+                                            ^^^^^ Comment
+                                                  ^^ Comment
+                                                     ^^^ Comment
+                                                         ^ Comment
+                                                           ^^^^ Comment
+                                                                ^^ Comment
+                                                                   ^^^ Comment
+                                                                       ^^^^^^^^^^ Comment
+                                                                                  ^ Comment
+
+( Macro contents )
+^ Comment
+  ^^^^^ Comment
+        ^^^^^^^^ Comment
+                 ^ Comment
+%MACRO {
+^ Operator
+ ^^^^^ Special
+       ^ Operator
+    BRK LIT2kr @label/label &sublabel
+    ^^^ Keyword
+        ^^^^^^ Keyword
+               ^ Operator
+                ^^^^^ Function
+                     ^ Operator
+                      ^^^^^ Function
+                            ^ Operator
+                             ^^^^^^^^ Function
+    .label #12 #abcd $1 |100 ~lib.tal
+    ^ Operator
+     ^^^^^ Type
+           ^ Operator
+            ^^ Number
+               ^ Operator
+                ^^^^ Number
+                     ^ Operator
+                      ^ Number
+                        ^ Operator
+                         ^^^ Number
+                             ^ Operator
+                              ^^^^^^^ String
+    "string %MACRO ( comment ) [ ]
+    ^ Operator
+     ^^^^^^ String
+            ^ Operator
+             ^^^^^ Special
+                   ^ Comment
+                     ^^^^^^^ Comment
+                             ^ Comment
+                               ^ Operator
+                                 ^ Operator
+}
+^ Operator

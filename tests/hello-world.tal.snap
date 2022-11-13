@@ -1,0 +1,69 @@
+%EMIT { #18 DEO }
+^ Operator
+ ^^^^ Special
+      ^ Operator
+        ^ Operator
+         ^^ Number
+            ^^^ Keyword
+                ^ Operator
+%HALT { #010f DEO }
+^ Operator
+ ^^^^ Special
+      ^ Operator
+        ^ Operator
+         ^^^^ Number
+              ^^^ Keyword
+                  ^ Operator
+
+( init )
+^ Comment
+  ^^^^ Comment
+       ^ Comment
+
+|0100 @program
+^ Operator
+ ^^^^ Number
+      ^ Operator
+       ^^^^^^^ Function
+
+    ;hello-word
+    ^ Operator
+     ^^^^^^^^^^ Type
+
+    &while
+    ^ Operator
+     ^^^^^ Function
+        ( send ) LDAk EMIT
+        ^ Comment
+          ^^^^ Comment
+               ^ Comment
+                 ^^^^ Keyword
+                      ^^^^ Macro
+        ( loop ) INC2 LDAk ,&while JCN
+        ^ Comment
+          ^^^^ Comment
+               ^ Comment
+                 ^^^^ Keyword
+                      ^^^^ Keyword
+                           ^ Operator
+                            ^ Operator
+                             ^^^^^ Type
+                                   ^^^ Keyword
+    POP2
+    ^^^^ Keyword
+
+    HALT
+    ^^^^ Macro
+
+BRK
+^^^ Keyword
+
+@hello-word "Hello 20 "World! 00
+^ Operator
+ ^^^^^^^^^^ Function
+            ^ Operator
+             ^^^^^ String
+                   ^^ Number
+                      ^ Operator
+                       ^^^^^^ String
+                              ^^ Number

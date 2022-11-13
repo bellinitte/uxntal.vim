@@ -1,0 +1,80 @@
+BRK JMP JMP2 JMPk JMPr JMP2kr2kr ( Valid mnemonics )
+^^^ Keyword
+    ^^^ Keyword
+        ^^^^ Keyword
+             ^^^^ Keyword
+                  ^^^^ Keyword
+                       ^^^^^^^^^ Keyword
+                                 ^ Comment
+                                   ^^^^^ Comment
+                                         ^^^^^^^^^ Comment
+                                                   ^ Comment
+
+BRK2 BRK2kr2kr ( BRK doesn't have any modes )
+^^^^ Macro
+     ^^^^^^^^^ Macro
+               ^ Comment
+                 ^^^ Comment
+                     ^^^^^^^ Comment
+                             ^^^^ Comment
+                                  ^^^ Comment
+                                      ^^^^^ Comment
+                                            ^ Comment
+
+aBRK BRKa -BRK BRK- BRK-JMP JMP2kr2jr JMPa JMP- ( Almost-mnemonics )
+^^^^ Macro
+     ^^^^ Macro
+          ^^^^ Macro
+               ^^^^ Macro
+                    ^^^^^^^ Macro
+                            ^^^^^^^^^ Macro
+                                      ^^^^ Macro
+                                           ^^^^ Macro
+                                                ^ Comment
+                                                  ^^^^^^^^^^^^^^^^ Comment
+                                                                   ^ Comment
+
+( All base mnemonics )
+^ Comment
+  ^^^ Comment
+      ^^^^ Comment
+           ^^^^^^^^^ Comment
+                     ^ Comment
+BRK
+^^^ Keyword
+LIT INC POP NIP SWP ROT DUP OVR
+^^^ Keyword
+    ^^^ Keyword
+        ^^^ Keyword
+            ^^^ Keyword
+                ^^^ Keyword
+                    ^^^ Keyword
+                        ^^^ Keyword
+                            ^^^ Keyword
+EQU NEQ GTH LTH JMP JCN JSR STH
+^^^ Keyword
+    ^^^ Keyword
+        ^^^ Keyword
+            ^^^ Keyword
+                ^^^ Keyword
+                    ^^^ Keyword
+                        ^^^ Keyword
+                            ^^^ Keyword
+LDZ STZ LDR STR LDA STA DEI DEO
+^^^ Keyword
+    ^^^ Keyword
+        ^^^ Keyword
+            ^^^ Keyword
+                ^^^ Keyword
+                    ^^^ Keyword
+                        ^^^ Keyword
+                            ^^^ Keyword
+ADD SUB MUL DIV AND ORA EOR SFT
+^^^ Keyword
+    ^^^ Keyword
+        ^^^ Keyword
+            ^^^ Keyword
+                ^^^ Keyword
+                    ^^^ Keyword
+                        ^^^ Keyword
+                            ^^^ Keyword

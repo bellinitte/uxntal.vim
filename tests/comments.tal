@@ -1,0 +1,22 @@
+x ( x ) x
+x (x x ) x
+x ( x )x ) x
+x (x) x )x()() x ) x
+x (x) x)X )x()() x ) x
+(
+    BRK LIT2kr @label/label &sublabel
+    .label #12 #abcd $1 |100 ~lib.tal
+    "string %MACRO { } [ ]
+)
+
+X( x )X ) x
+
+( Nested comments )
+x ( x ( x ) x ) x
+x (x x ( x ) x ) x
+x ( x ( x )x x ) x ) x
+x (x x ( x )x x ) x ) x
+
+( Not nested -- inner comment doesn't start with a `(` )
+x ( x (x x ) x ) x
+x (x x (x x ) x ) x

@@ -1,0 +1,18 @@
+0 01 012 0123 01234 ( Length of a raw number must be 2 or 4 )
+ab aB Ab AB abcd abcD ABCD ( All digits of raw numbers must be lowercase )
+
+#01 #abcd
+|01 |abcd
+$01 $abcd
+
+( Runed numbers can be of any length )
+#0 #012 #01234
+|0 |012 |01234
+$0 $012 $01234
+
+# | $
+
+( Runed numbers can have arbitrary "digits" )
+#x!@ ## 
+|x!@ || 
+$x!@ $$

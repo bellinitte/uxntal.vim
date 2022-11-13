@@ -1,0 +1,114 @@
+0 01 012 0123 01234 ( Length of a raw number must be 2 or 4 )
+^ Macro
+  ^^ Number
+     ^^^ Macro
+         ^^^^ Number
+              ^^^^^ Macro
+                    ^ Comment
+                      ^^^^^^ Comment
+                             ^^ Comment
+                                ^ Comment
+                                  ^^^ Comment
+                                      ^^^^^^ Comment
+                                             ^^^^ Comment
+                                                  ^^ Comment
+                                                     ^ Comment
+                                                       ^^ Comment
+                                                          ^ Comment
+                                                            ^ Comment
+ab aB Ab AB abcd abcD ABCD ( All digits of raw numbers must be lowercase )
+^^ Number
+   ^^ Macro
+      ^^ Macro
+         ^^ Macro
+            ^^^^ Number
+                 ^^^^ Macro
+                      ^^^^ Macro
+                           ^ Comment
+                             ^^^ Comment
+                                 ^^^^^^ Comment
+                                        ^^ Comment
+                                           ^^^ Comment
+                                               ^^^^^^^ Comment
+                                                       ^^^^ Comment
+                                                            ^^ Comment
+                                                               ^^^^^^^^^ Comment
+                                                                         ^ Comment
+
+#01 #abcd
+^ Operator
+ ^^ Number
+    ^ Operator
+     ^^^^ Number
+|01 |abcd
+^ Operator
+ ^^ Number
+    ^ Operator
+     ^^^^ Number
+$01 $abcd
+^ Operator
+ ^^ Number
+    ^ Operator
+     ^^^^ Number
+
+( Runed numbers can be of any length )
+^ Comment
+  ^^^^^ Comment
+        ^^^^^^^ Comment
+                ^^^ Comment
+                    ^^ Comment
+                       ^^ Comment
+                          ^^^ Comment
+                              ^^^^^^ Comment
+                                     ^ Comment
+#0 #012 #01234
+^ Operator
+ ^ Number
+   ^ Operator
+    ^^^ Number
+        ^ Operator
+         ^^^^^ Number
+|0 |012 |01234
+^ Operator
+ ^ Number
+   ^ Operator
+    ^^^ Number
+        ^ Operator
+         ^^^^^ Number
+$0 $012 $01234
+^ Operator
+ ^ Number
+   ^ Operator
+    ^^^ Number
+        ^ Operator
+         ^^^^^ Number
+
+# | $
+^ Operator
+  ^ Operator
+    ^ Operator
+
+( Runed numbers can have arbitrary "digits" )
+^ Comment
+  ^^^^^ Comment
+        ^^^^^^^ Comment
+                ^^^ Comment
+                    ^^^^ Comment
+                         ^^^^^^^^^ Comment
+                                   ^^^^^^^^ Comment
+                                            ^ Comment
+#x!@ ##
+^ Operator
+ ^^^ Number
+     ^ Operator
+      ^ Number
+|x!@ ||
+^ Operator
+ ^^^ Number
+     ^ Operator
+      ^ Number
+$x!@ $$
+^ Operator
+ ^^^ Number
+     ^ Operator
+      ^ Number

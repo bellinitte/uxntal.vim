@@ -1,0 +1,20 @@
+[ #00 ]
+^ Operator
+  ^ Operator
+   ^^ Number
+      ^ Operator
+[[ #00 ]]
+^^ Macro
+   ^ Operator
+    ^^ Number
+       ^^ Macro
+[x #00 ]x
+^^ Macro
+   ^ Operator
+    ^^ Number
+       ^^ Macro
+x[x #00 x]x
+^^^ Macro
+    ^ Operator
+     ^^ Number
+        ^^^ Macro

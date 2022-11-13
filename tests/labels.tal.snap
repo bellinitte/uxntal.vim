@@ -1,0 +1,56 @@
+@label
+^ Operator
+ ^^^^^ Function
+&sublabel
+^ Operator
+ ^^^^^^^^ Function
+
+@label-label
+^ Operator
+ ^^^^^^^^^^^ Function
+@label-la/bel ( `/` highlighted )
+^ Operator
+ ^^^^^^^^ Function
+         ^ Operator
+          ^^^ Function
+              ^ Comment
+                ^^^ Comment
+                    ^^^^^^^^^^^ Comment
+                                ^ Comment
+@la/bel-la/bel ( Second `/` not highlighted )
+^ Operator
+ ^^ Function
+   ^ Operator
+    ^^^^^^^^^^ Function
+               ^ Comment
+                 ^^^^^^ Comment
+                        ^^^ Comment
+                            ^^^ Comment
+                                ^^^^^^^^^^^ Comment
+                                            ^ Comment
+@
+^ Operator
+@/
+^ Operator
+ ^ Operator
+@//
+^ Operator
+ ^ Operator
+  ^ Function
+
+&sublabel-sublabel
+^ Operator
+ ^^^^^^^^^^^^^^^^^ Function
+&sublabel-subla/bel ( `/` not highlighted )
+^ Operator
+ ^^^^^^^^^^^^^^^^^^ Function
+                    ^ Comment
+                      ^^^ Comment
+                          ^^^ Comment
+                              ^^^^^^^^^^^ Comment
+                                          ^ Comment
+&
+^ Operator
+&/
+^ Operator
+ ^ Function

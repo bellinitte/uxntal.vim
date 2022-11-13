@@ -1,0 +1,25 @@
+%MACRO { }
+%! { }
+%@ { }
+%% { }
+% { }
+
+( Braces )
+%MACRO { }
+%MACRO{ }
+%MACRO{x }
+%MACRO{x }x
+%MACRO { { { } ( Multiple opening braces are part of the definition )
+%MACRO { } } } ( Only one closing brace is a part of the definition )
+%MACRO { { } }
+{ } ( Braces outside of a macro definition )
+x{ x}
+
+%MACRO { x %NESTED { x } x } ( Last closing brace is not a part of the definition )
+
+( Macro contents )
+%MACRO {
+    BRK LIT2kr @label/label &sublabel
+    .label #12 #abcd $1 |100 ~lib.tal
+    "string %MACRO ( comment ) [ ]
+}

@@ -1,0 +1,12 @@
+BRK JMP JMP2 JMPk JMPr JMP2kr2kr ( Valid mnemonics )
+
+BRK2 BRK2kr2kr ( BRK doesn't have any modes )
+
+aBRK BRKa -BRK BRK- BRK-JMP JMP2kr2jr JMPa JMP- ( Almost-mnemonics )
+
+( All base mnemonics )
+BRK
+LIT INC POP NIP SWP ROT DUP OVR
+EQU NEQ GTH LTH JMP JCN JSR STH
+LDZ STZ LDR STR LDA STA DEI DEO
+ADD SUB MUL DIV AND ORA EOR SFT
