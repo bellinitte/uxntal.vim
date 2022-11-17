@@ -4,9 +4,9 @@ File detection and syntax highlighting for the [Uxntal](https://wiki.xxiivv.com/
 
 ## Preview
 
-![Preview](images/preview.png)
-
-_Theme: Gruvbox Dark_
+![Preview](images/preview.png)<br>
+<sub>Theme: Gruvbox Dark</sub><br>
+<sup>Font: IBM Plex Mono</sup>
 
 ## Installing
 
@@ -25,7 +25,7 @@ filetype plugin indent on
 
 ## Testing
 
-To run the whole test suite run
+Run the whole test suite with
 
 ```console
 scripts/test.sh tests/*.tal
