@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:   Uxntal
 " Maintainer: Karol Belina <karolbelina@gmail.com>
-" Version:    v0.1.2
+" Version:    0.2.0
 " For bugs, patches and license visit https://github.com/karolbelina/uxntal.vim
 
 if exists("b:current_syntax")
