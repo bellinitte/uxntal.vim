@@ -72,7 +72,7 @@ for file in "${input_files[@]}"; do
         rm -f "$file.snap.new"
     fi
 
-    ((tests_count++))
+    tests_count=$((tests_count + 1))
 done
 
 if [[ $failed_count != 0 ]]; then
