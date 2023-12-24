@@ -12,7 +12,9 @@ $0 $012 $01234
 
 # | $
 
-( Runed numbers can have arbitrary "digits" )
-#x!@ ## 
-|x!@ || 
-$x!@ $$
+( Literal numbers can have arbitrary "digits" )
+#0x #x!@ ##
+
+( Paddings cannot )
+|0x0
+$0x0

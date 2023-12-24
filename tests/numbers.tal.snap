@@ -88,27 +88,31 @@ $0 $012 $01234
   ^ Operator
     ^ Operator
 
-( Runed numbers can have arbitrary "digits" )
+( Literal numbers can have arbitrary "digits" )
 ^ Comment
-  ^^^^^ Comment
-        ^^^^^^^ Comment
-                ^^^ Comment
-                    ^^^^ Comment
-                         ^^^^^^^^^ Comment
-                                   ^^^^^^^^ Comment
-                                            ^ Comment
-#x!@ ##
+  ^^^^^^^ Comment
+          ^^^^^^^ Comment
+                  ^^^ Comment
+                      ^^^^ Comment
+                           ^^^^^^^^^ Comment
+                                     ^^^^^^^^ Comment
+                                              ^ Comment
+#0x #x!@ ##
 ^ Operator
- ^^^ Number
-     ^ Operator
-      ^ Number
-|x!@ ||
+ ^^ Number
+    ^ Operator
+     ^^^ Number
+         ^ Operator
+          ^ Number
+
+( Paddings cannot )
+^ Comment
+  ^^^^^^^^ Comment
+           ^^^^^^ Comment
+                  ^ Comment
+|0x0
 ^ Operator
- ^^^ Number
-     ^ Operator
-      ^ Number
-$x!@ $$
+ ^^^ Type
+$0x0
 ^ Operator
- ^^^ Number
-     ^ Operator
-      ^ Number
+ ^^^ Type

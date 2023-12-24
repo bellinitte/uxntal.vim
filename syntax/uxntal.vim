@@ -20,6 +20,8 @@ highlight default link uxntalImmediateReferenceLabelSlash uxntalRune
 highlight default link uxntalImmediateReferenceLabelSublabel uxntalReference
 
 syntax match uxntalRawNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
+highlight default link uxntalRawNumber uxntalNumber
+
 syntax match uxntalMnemonic "\<\(BRK\|\(LIT\|INC\|POP\|DUP\|NIP\|SWP\|OVR\|ROT\|EQU\|NEQ\|GTH\|LTH\|JMP\|JCN\|JSR\|STH\|LDZ\|STZ\|LDR\|STR\|LDA\|STA\|DEI\|DEO\|ADD\|SUB\|MUL\|DIV\|AND\|ORA\|EOR\|SFT\)[kr2]*\)\>"
 
 syntax match uxntalIncludeRune "\<\~" nextgroup=uxntalInclude
@@ -30,9 +32,21 @@ syntax match uxntalMacroDefintionHeaderRune "\<%" nextgroup=uxntalMacroDefintion
 syntax match uxntalMacroDefintionHeader "\S*" contained
 highlight default link uxntalMacroDefintionHeaderRune uxntalRune
 
-syntax match uxntalPadRune "\<[|\$]" nextgroup=uxntalPad
-syntax match uxntalPad "\S*" contained
-highlight default link uxntalPadRune uxntalRune
+syntax match uxntalPaddingRune "\<[|\$]" nextgroup=uxntalPaddingNumeric,uxntalPaddingLabeled
+syntax match uxntalPaddingNumeric "[0-9a-f]*" contained
+syntax match uxntalPaddingLabeled "\([0-9a-f]*\>\)\@!" contained nextgroup=uxntalPaddingLabel,uxntalPaddingScopedSublabelRune
+syntax match uxntalPaddingLabel "[^/[:space:]]*" contained nextgroup=uxntalPaddingLabelSlash
+syntax match uxntalPaddingLabelSlash "/" contained nextgroup=uxntalPaddingLabelSublabel
+syntax match uxntalPaddingLabelSublabel "\S*" contained
+syntax match uxntalPaddingScopedSublabelRune "&" contained nextgroup=uxntalPaddingScopedSublabel
+syntax match uxntalPaddingScopedSublabel "\S*" contained
+highlight default link uxntalPaddingRune uxntalRune
+highlight default link uxntalPaddingNumeric uxntalNumber
+highlight default link uxntalPaddingLabel uxntalReference
+highlight default link uxntalPaddingLabelSlash uxntalRune
+highlight default link uxntalPaddingLabelSublabel uxntalReference
+highlight default link uxntalPaddingScopedSublabelRune uxntalRune
+highlight default link uxntalPaddingScopedSublabel uxntalReference
 
 syntax match uxntalLabelRune "\<@" nextgroup=uxntalLabel
 syntax match uxntalLabel "[^/[:space:]]*" contained nextgroup=uxntalLabelSlash
@@ -87,12 +101,12 @@ highlight default link uxntalRune                    Operator
 highlight default link uxntalComment                 Comment
 highlight default link uxntalMacroDefintionHeader    Special
 highlight default link uxntalInclude                 String
-highlight default link uxntalPad                     Number
+highlight default link uxntalPadding                 Number
 highlight default link uxntalLabel                   Function
 highlight default link uxntalLiteralNumber           Number
 highlight default link uxntalReference               Type
 highlight default link uxntalString                  String
 highlight default link uxntalMnemonic                Keyword
-highlight default link uxntalRawNumber               Number
+highlight default link uxntalNumber                  Number
 
 let b:current_syntax = "uxntal"
