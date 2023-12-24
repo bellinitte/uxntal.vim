@@ -54,7 +54,7 @@ syntax match uxntalLiteralNumberRune "\<#" nextgroup=uxntalLiteralNumber
 syntax match uxntalLiteralNumber "\S*" contained
 highlight default link uxntalLiteralNumberRune uxntalRune
 
-syntax match uxntalReferenceRune "\<[.,:;\-=_]" nextgroup=uxntalReferenceLabel,uxntalReferenceScopedSublabelRune
+syntax match uxntalReferenceRune "\<[.,:;\-=_!?]" nextgroup=uxntalReferenceLabel,uxntalReferenceScopedSublabelRune
 syntax match uxntalReferenceLabel "[^/[:space:]]*" contained nextgroup=uxntalReferenceLabelSlash
 syntax match uxntalReferenceLabelSlash "/" contained nextgroup=uxntalReferenceLabelSublabel
 syntax match uxntalReferenceLabelSublabel "\S*" contained

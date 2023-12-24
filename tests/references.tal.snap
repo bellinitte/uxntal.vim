@@ -40,6 +40,18 @@ _label _&sublabel
        ^ Operator
         ^ Operator
          ^^^^^^^^ Type
+!label !&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
+?label ?&sublabel
+^ Operator
+ ^^^^^ Type
+       ^ Operator
+        ^ Operator
+         ^^^^^^^^ Type
 
 label-label
 ^^^^^^^^^^^ Type
