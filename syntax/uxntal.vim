@@ -22,7 +22,7 @@ highlight default link uxntalImmediateReferenceLabelSublabel uxntalReference
 syntax match uxntalRawNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
 highlight default link uxntalRawNumber uxntalNumber
 
-syntax match uxntalMnemonic "\<\(BRK\|JCI\|JMI\|JSI\|\(LIT\|INC\|POP\|DUP\|NIP\|SWP\|OVR\|ROT\|EQU\|NEQ\|GTH\|LTH\|JMP\|JCN\|JSR\|STH\|LDZ\|STZ\|LDR\|STR\|LDA\|STA\|DEI\|DEO\|ADD\|SUB\|MUL\|DIV\|AND\|ORA\|EOR\|SFT\)[kr2]*\)\>"
+syntax match uxntalMnemonic "\<\(BRK\|JCI\|JMI\|JSI\|LIT[r2]*\|\(INC\|POP\|NIP\|SWP\|ROT\|DUP\|OVR\|EQU\|NEQ\|GTH\|LTH\|JMP\|JCN\|JSR\|STH\|LDZ\|STZ\|LDR\|STR\|LDA\|STA\|DEI\|DEO\|ADD\|SUB\|MUL\|DIV\|AND\|ORA\|EOR\|SFT\)[kr2]*\)\>"
 
 syntax match uxntalIncludeRune "\<\~" nextgroup=uxntalInclude
 syntax match uxntalInclude "\S*" contained

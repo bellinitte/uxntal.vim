@@ -17,7 +17,7 @@
 
 ( Macro contents )
 %MACRO {
-    BRK LIT2kr @label/label &sublabel
+    BRK ADD2kr @label/label &sublabel
     .label #12 #abcd $1 |100 ~lib.tal
     "string %MACRO ( comment ) [ ]
 }

@@ -5,6 +5,7 @@ BRK2 BRKk BRKr
 JCI2 JCIk JCIr
 JMI2 JMIk JMIr
 JSI2 JSIk JSIr
+LITk
 
 aBRK BRKa BRK- BRK-JMP JMP2kr2jr JMPa JMP- ( Almost-mnemonics )
 
