@@ -17,7 +17,7 @@
 ^ Operator
 
 'char ( Removed `'` rune )
-^^^^^ Macro
+^^^^^ Type
       ^ Comment
         ^^^^^^^ Comment
                 ^^^ Comment

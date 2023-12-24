@@ -38,7 +38,7 @@
           ^^^^ Comment
                ^ Comment
                  ^^^^ Keyword
-                      ^^^^ Macro
+                      ^^^^ Type
         ( loop ) INC2 LDAk ,&while JCN
         ^ Comment
           ^^^^ Comment
@@ -53,7 +53,7 @@
     ^^^^ Keyword
 
     HALT
-    ^^^^ Macro
+    ^^^^ Type
 
 BRK
 ^^^ Keyword

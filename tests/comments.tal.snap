@@ -1,38 +1,38 @@
 x ( x ) x
-^ Macro
+^ Type
   ^ Comment
     ^ Comment
       ^ Comment
-        ^ Macro
+        ^ Type
 x (x x ) x
-^ Macro
+^ Type
   ^^ Comment
      ^ Comment
        ^ Comment
-         ^ Macro
+         ^ Type
 x ( x )x ) x
-^ Macro
+^ Type
   ^ Comment
     ^ Comment
       ^^ Comment
          ^ Comment
-           ^ Macro
+           ^ Type
 x (x) x )x()() x ) x
-^ Macro
+^ Type
   ^^^ Comment
       ^ Comment
         ^^^^^^ Comment
                ^ Comment
                  ^ Comment
-                   ^ Macro
+                   ^ Type
 x (x) x)X )x()() x ) x
-^ Macro
+^ Type
   ^^^ Comment
       ^^^ Comment
           ^^^^^^ Comment
                  ^ Comment
                    ^ Comment
-                     ^ Macro
+                     ^ Type
 (
 ^ Comment
     BRK LIT2kr @label/label &sublabel
@@ -58,11 +58,11 @@ x (x) x)X )x()() x ) x
 ^ Comment
 
 X( x )X ) x
-^^ Macro
-   ^ Macro
-     ^^ Macro
-        ^ Macro
-          ^ Macro
+^^ Type
+   ^ Type
+     ^^ Type
+        ^ Type
+          ^ Type
 
 ( Nested comments )
 ^ Comment
@@ -70,7 +70,7 @@ X( x )X ) x
          ^^^^^^^^ Comment
                   ^ Comment
 x ( x ( x ) x ) x
-^ Macro
+^ Type
   ^ Comment
     ^ Comment
       ^ Comment
@@ -78,9 +78,9 @@ x ( x ( x ) x ) x
           ^ Comment
             ^ Comment
               ^ Comment
-                ^ Macro
+                ^ Type
 x (x x ( x ) x ) x
-^ Macro
+^ Type
   ^^ Comment
      ^ Comment
        ^ Comment
@@ -88,9 +88,9 @@ x (x x ( x ) x ) x
            ^ Comment
              ^ Comment
                ^ Comment
-                 ^ Macro
+                 ^ Type
 x ( x ( x )x x ) x ) x
-^ Macro
+^ Type
   ^ Comment
     ^ Comment
       ^ Comment
@@ -100,9 +100,9 @@ x ( x ( x )x x ) x ) x
                ^ Comment
                  ^ Comment
                    ^ Comment
-                     ^ Macro
+                     ^ Type
 x (x x ( x )x x ) x ) x
-^ Macro
+^ Type
   ^^ Comment
      ^ Comment
        ^ Comment
@@ -112,7 +112,7 @@ x (x x ( x )x x ) x ) x
                 ^ Comment
                   ^ Comment
                     ^ Comment
-                      ^ Macro
+                      ^ Type
 
 ( Not nested -- inner comment doesn't start with a `(` )
 ^ Comment
@@ -128,22 +128,22 @@ x (x x ( x )x x ) x ) x
                                                    ^^^ Comment
                                                        ^ Comment
 x ( x (x x ) x ) x
-^ Macro
+^ Type
   ^ Comment
     ^ Comment
       ^^ Comment
          ^ Comment
            ^ Comment
-             ^ Macro
-               ^ Macro
-                 ^ Macro
+             ^ Type
+               ^ Type
+                 ^ Type
 x (x x (x x ) x ) x
-^ Macro
+^ Type
   ^^ Comment
      ^ Comment
        ^^ Comment
           ^ Comment
             ^ Comment
-              ^ Macro
-                ^ Macro
-                  ^ Macro
+              ^ Type
+                ^ Type
+                  ^ Type

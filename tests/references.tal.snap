@@ -41,6 +41,32 @@ _label _&sublabel
         ^ Operator
          ^^^^^^^^ Type
 
+label-label
+^^^^^^^^^^^ Type
+label-la/bel ( `/` highlighted )
+^^^^^^^^ Type
+        ^ Operator
+         ^^^ Type
+             ^ Comment
+               ^^^ Comment
+                   ^^^^^^^^^^^ Comment
+                               ^ Comment
+la/bel-la/bel ( Second `/` not highlighted )
+^^ Type
+  ^ Operator
+   ^^^^^^^^^^ Type
+              ^ Comment
+                ^^^^^^ Comment
+                       ^^^ Comment
+                           ^^^ Comment
+                               ^^^^^^^^^^^ Comment
+                                           ^ Comment
+/
+^ Operator
+//
+^ Operator
+ ^ Type
+
 .label-label
 ^ Operator
  ^^^^^^^^^^^ Type

@@ -66,8 +66,8 @@
  ^^^^^ Special
        ^ Operator
          ^ Operator
-           ^ Macro
-             ^ Macro
+           ^ Type
+             ^ Type
                ^ Comment
                  ^^^^ Comment
                       ^^^ Comment
@@ -86,10 +86,10 @@
        ^ Operator
          ^ Operator
            ^ Operator
-             ^ Macro
+             ^ Type
 { } ( Braces outside of a macro definition )
-^ Macro
-  ^ Macro
+^ Type
+  ^ Type
     ^ Comment
       ^^^^^^ Comment
              ^^^^^^^ Comment
@@ -99,21 +99,21 @@
                                 ^^^^^^^^^^ Comment
                                            ^ Comment
 x{ x}
-^^ Macro
-   ^^ Macro
+^^ Type
+   ^^ Type
 
 %MACRO { x %NESTED { x } x } ( Last closing brace is not a part of the definition )
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Operator
             ^^^^^^ Special
                    ^ Operator
-                     ^ Macro
+                     ^ Type
                        ^ Operator
-                         ^ Macro
-                           ^ Macro
+                         ^ Type
+                           ^ Type
                              ^ Comment
                                ^^^^ Comment
                                     ^^^^^^^ Comment

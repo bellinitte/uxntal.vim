@@ -6,6 +6,12 @@
 =label =&sublabel
 _label _&sublabel
 
+label-label
+label-la/bel ( `/` highlighted )
+la/bel-la/bel ( Second `/` not highlighted )
+/
+//
+
 .label-label
 .label-la/bel ( `/` highlighted )
 .la/bel-la/bel ( Second `/` not highlighted )

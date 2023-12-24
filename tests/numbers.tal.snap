@@ -1,9 +1,9 @@
 0 01 012 0123 01234 ( Length of a raw number must be 2 or 4 )
-^ Macro
+^ Type
   ^^ Number
-     ^^^ Macro
+     ^^^ Type
          ^^^^ Number
-              ^^^^^ Macro
+              ^^^^^ Type
                     ^ Comment
                       ^^^^^^ Comment
                              ^^ Comment
@@ -18,12 +18,12 @@
                                                             ^ Comment
 ab aB Ab AB abcd abcD ABCD ( All digits of raw numbers must be lowercase )
 ^^ Number
-   ^^ Macro
-      ^^ Macro
-         ^^ Macro
+   ^^ Type
+      ^^ Type
+         ^^ Type
             ^^^^ Number
-                 ^^^^ Macro
-                      ^^^^ Macro
+                 ^^^^ Type
+                      ^^^^ Type
                            ^ Comment
                              ^^^ Comment
                                  ^^^^^^ Comment

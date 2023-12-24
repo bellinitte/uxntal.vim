@@ -4,17 +4,17 @@
    ^^ Number
       ^ Operator
 [[ #00 ]]
-^^ Macro
+^^ Type
    ^ Operator
     ^^ Number
-       ^^ Macro
+       ^^ Type
 [x #00 ]x
-^^ Macro
+^^ Type
    ^ Operator
     ^^ Number
-       ^^ Macro
+       ^^ Type
 x[x #00 x]x
-^^^ Macro
+^^^ Type
     ^ Operator
      ^^ Number
-        ^^^ Macro
+        ^^^ Type

@@ -2,62 +2,62 @@
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^ Comment
-                 ^ Macro
+                 ^ Type
                    ^ Operator
 %MACRO { x (x x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^ Comment
-                  ^ Macro
+                  ^ Type
                     ^ Operator
 %MACRO { x (x x )x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^^ Comment
                    ^ Comment
-                     ^ Macro
+                     ^ Type
                        ^ Operator
 %MACRO { x (x) x )x()() x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^^ Comment
                ^ Comment
                  ^^^^^^ Comment
                         ^ Comment
                           ^ Comment
-                            ^ Macro
+                            ^ Type
                               ^ Operator
 %MACRO { x (x) x)X )x()() x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^^ Comment
                ^^^ Comment
                    ^^^^^^ Comment
                           ^ Comment
                             ^ Comment
-                              ^ Macro
+                              ^ Type
                                 ^ Operator
 %MACRO { x (
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
     BRK LIT2kr @label/label &sublabel
     ^^^ Comment
@@ -77,18 +77,18 @@
               ^ Comment
 ) x }
 ^ Comment
-  ^ Macro
+  ^ Type
     ^ Operator
 
 %MACRO { X( x )X ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^^ Macro
-            ^ Macro
-              ^^ Macro
-                 ^ Macro
-                   ^ Macro
+         ^^ Type
+            ^ Type
+              ^^ Type
+                 ^ Type
+                   ^ Type
                      ^ Operator
 
 ( Nested comments )
@@ -100,7 +100,7 @@
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^ Comment
@@ -108,13 +108,13 @@
                    ^ Comment
                      ^ Comment
                        ^ Comment
-                         ^ Macro
+                         ^ Type
                            ^ Operator
 %MACRO { x (x x ( x ) x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^ Comment
@@ -122,13 +122,13 @@
                     ^ Comment
                       ^ Comment
                         ^ Comment
-                          ^ Macro
+                          ^ Type
                             ^ Operator
 %MACRO { x ( x ( x )x x ) x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^ Comment
@@ -138,13 +138,13 @@
                         ^ Comment
                           ^ Comment
                             ^ Comment
-                              ^ Macro
+                              ^ Type
                                 ^ Operator
 %MACRO { x (x x ( x )x x ) x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^ Comment
@@ -154,13 +154,13 @@
                          ^ Comment
                            ^ Comment
                              ^ Comment
-                               ^ Macro
+                               ^ Type
                                  ^ Operator
 %MACRO { x ( x ( x ( x ) x ) x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^ Comment
@@ -172,76 +172,77 @@
                            ^ Comment
                              ^ Comment
                                ^ Comment
-                                 ^ Macro
+                                 ^ Type
                                    ^ Operator
 
-( Not nested -- inner comment doesn't start with a `(` )
+( Not nested -- inner comment has other characters after the `(` )
 ^ Comment
   ^^^ Comment
       ^^^^^^ Comment
              ^^ Comment
                 ^^^^^ Comment
                       ^^^^^^^ Comment
-                              ^^^^^^^ Comment
-                                      ^^^^^ Comment
-                                            ^^^^ Comment
-                                                 ^ Comment
-                                                   ^^^ Comment
-                                                       ^ Comment
+                              ^^^ Comment
+                                  ^^^^^ Comment
+                                        ^^^^^^^^^^ Comment
+                                                   ^^^^^ Comment
+                                                         ^^^ Comment
+                                                             ^^^ Comment
+                                                                 ^ Comment
 %MACRO { x ( x (x x ) x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^^ Comment
                   ^ Comment
                     ^ Comment
-                      ^ Macro
-                        ^ Macro
-                          ^ Macro
+                      ^ Type
+                        ^ Type
+                          ^ Type
                             ^ Operator
 %MACRO { x (x x (x x ) x ) x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^^ Comment
                    ^ Comment
                      ^ Comment
-                       ^ Macro
-                         ^ Macro
-                           ^ Macro
+                       ^ Type
+                         ^ Type
+                           ^ Type
                              ^ Operator
 %MACRO { x (x x (x )x ) x } x
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^^ Comment
                    ^^ Comment
                       ^ Comment
-                        ^ Macro
+                        ^ Type
                           ^ Operator
-                            ^ Macro
+                            ^ Type
 %MACRO { x (x x (x x ) x } x
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^^ Comment
                    ^ Comment
                      ^ Comment
-                       ^ Macro
+                       ^ Type
                          ^ Operator
-                           ^ Macro
+                           ^ Type
 
 ( Unclosed comments )
 ^ Comment
@@ -252,32 +253,32 @@
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^ Operator
-                 ^ Macro
+                 ^ Type
 %MACRO { x (x x } x
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^ Operator
-                  ^ Macro
+                  ^ Type
 %MACRO { x (x ( x ) x } x
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^^ Comment
               ^ Comment
                 ^ Comment
                   ^ Comment
                     ^ Comment
                       ^ Operator
-                        ^ Macro
+                        ^ Type
 
 ( Nested macros )
 ^ Comment
@@ -288,14 +289,14 @@
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^ Operator
                 ^^^^^^ Special
                        ^ Comment
                          ^ Comment
-                           ^ Macro
+                           ^ Type
                              ^ Operator
                                ^ Comment
                                  ^^^^^^ Comment
@@ -308,7 +309,7 @@
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^ Comment
@@ -319,13 +320,13 @@
                              ^ Comment
                                ^ Comment
                                  ^ Comment
-                                   ^ Macro
+                                   ^ Type
                                      ^ Operator
 %MACRO { x ( x %NESTED { x } x
 ^ Operator
  ^^^^^ Special
        ^ Operator
-         ^ Macro
+         ^ Type
            ^ Comment
              ^ Comment
                ^ Operator
@@ -333,7 +334,7 @@
                        ^ Comment
                          ^ Comment
                            ^ Operator
-                             ^ Macro
+                             ^ Type
 
 ( Macros in comments )
 ^ Comment
@@ -342,7 +343,7 @@
             ^^^^^^^^ Comment
                      ^ Comment
 x ( x %MACRO { x } x ) x
-^ Macro
+^ Type
   ^ Comment
     ^ Comment
       ^^^^^^ Comment
@@ -351,10 +352,10 @@ x ( x %MACRO { x } x ) x
                  ^ Comment
                    ^ Comment
                      ^ Comment
-                       ^ Macro
+                       ^ Type
 x ( } ) x
-^ Macro
+^ Type
   ^ Comment
     ^ Comment
       ^ Comment
-        ^ Macro
+        ^ Type

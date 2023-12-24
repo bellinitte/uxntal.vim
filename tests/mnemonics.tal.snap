@@ -11,8 +11,8 @@ BRK JMP JMP2 JMPk JMPr JMP2kr2kr ( Valid mnemonics )
                                                    ^ Comment
 
 BRK2 BRK2kr2kr ( BRK doesn't have any modes )
-^^^^ Macro
-     ^^^^^^^^^ Macro
+^^^^ Type
+     ^^^^^^^^^ Type
                ^ Comment
                  ^^^ Comment
                      ^^^^^^^ Comment
@@ -22,13 +22,13 @@ BRK2 BRK2kr2kr ( BRK doesn't have any modes )
                                             ^ Comment
 
 aBRK BRKa BRK- BRK-JMP JMP2kr2jr JMPa JMP- ( Almost-mnemonics )
-^^^^ Macro
-     ^^^^ Macro
-          ^^^^ Macro
-               ^^^^^^^ Macro
-                       ^^^^^^^^^ Macro
-                                 ^^^^ Macro
-                                      ^^^^ Macro
+^^^^ Type
+     ^^^^ Type
+          ^^^^ Type
+               ^^^^^^^ Type
+                       ^^^^^^^^^ Type
+                                 ^^^^ Type
+                                      ^^^^ Type
                                            ^ Comment
                                              ^^^^^^^^^^^^^^^^ Comment
                                                               ^ Comment

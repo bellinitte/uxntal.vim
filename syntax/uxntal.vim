@@ -12,7 +12,13 @@ syntax iskeyword @,33-255
 
 syntax match uxntalComment "\S*" contained containedin=uxntalCommentRegion,uxntalMacroCommentRegion
 
-syntax match uxntalMacro display "\<\S\+"
+syntax match uxntalImmediateReferenceLabel "[^/[:space:]]*" nextgroup=uxntalImmediateReferenceLabelSlash
+syntax match uxntalImmediateReferenceLabelSlash "/" contained nextgroup=uxntalImmediateReferenceLabelSublabel
+syntax match uxntalImmediateReferenceLabelSublabel "\S*" contained
+highlight default link uxntalImmediateReferenceLabel uxntalReference
+highlight default link uxntalImmediateReferenceLabelSlash uxntalRune
+highlight default link uxntalImmediateReferenceLabelSublabel uxntalReference
+
 syntax match uxntalRawNumber "\<\([0-9a-f]\{2\}\|[0-9a-f]\{4\}\)\>"
 syntax match uxntalMnemonic "\<\(BRK\|\(LIT\|INC\|POP\|DUP\|NIP\|SWP\|OVR\|ROT\|EQU\|NEQ\|GTH\|LTH\|JMP\|JCN\|JSR\|STH\|LDZ\|STZ\|LDR\|STR\|LDA\|STA\|DEI\|DEO\|ADD\|SUB\|MUL\|DIV\|AND\|ORA\|EOR\|SFT\)[kr2]*\)\>"
 
@@ -37,10 +43,12 @@ syntax match uxntalLabelSlash "/" contained nextgroup=uxntalLabelSublabel
 syntax match uxntalLabelSublabel "\S*" contained
 highlight default link uxntalLabelRune uxntalRune
 highlight default link uxntalLabelSlash uxntalRune
+highlight default link uxntalLabelSublabel uxntalLabel
 
 syntax match uxntalScopedSublabelRune "\<&" nextgroup=uxntalScopedSublabel
 syntax match uxntalScopedSublabel "\S*" contained
 highlight default link uxntalScopedSublabelRune uxntalRune
+highlight default link uxntalScopedSublabel uxntalLabel
 
 syntax match uxntalLiteralNumberRune "\<#" nextgroup=uxntalLiteralNumber
 syntax match uxntalLiteralNumber "\S*" contained
@@ -53,8 +61,11 @@ syntax match uxntalReferenceLabelSublabel "\S*" contained
 syntax match uxntalReferenceScopedSublabelRune "&" contained nextgroup=uxntalReferenceScopedSublabel
 syntax match uxntalReferenceScopedSublabel "\S*" contained
 highlight default link uxntalReferenceRune uxntalRune
+highlight default link uxntalReferenceLabel uxntalReference
 highlight default link uxntalReferenceLabelSlash uxntalRune
+highlight default link uxntalReferenceLabelSublabel uxntalReference
 highlight default link uxntalReferenceScopedSublabelRune uxntalRune
+highlight default link uxntalReferenceScopedSublabel uxntalReference
 
 syntax match uxntalStringRune "\<\"" nextgroup=uxntalString
 syntax match uxntalString "\S*" contained
@@ -76,15 +87,10 @@ highlight default link uxntalMacroDefintionHeader    Special
 highlight default link uxntalInclude                 String
 highlight default link uxntalPad                     Number
 highlight default link uxntalLabel                   Function
-highlight default link uxntalLabelSublabel           Function
-highlight default link uxntalScopedSublabel          Function
 highlight default link uxntalLiteralNumber           Number
-highlight default link uxntalReferenceLabel          Type
-highlight default link uxntalReferenceLabelSublabel  Type
-highlight default link uxntalReferenceScopedSublabel Type
+highlight default link uxntalReference               Type
 highlight default link uxntalString                  String
 highlight default link uxntalMnemonic                Keyword
 highlight default link uxntalRawNumber               Number
-highlight default link uxntalMacro                   Macro
 
 let b:current_syntax = "uxntal"
