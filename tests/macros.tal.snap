@@ -44,65 +44,29 @@
 ^ Operator
  ^^^^^^^ Special
          ^^ Operator
-%MACRO { { { } ( Multiple opening braces are part of the definition )
+%MACRO { { { }
 ^ Operator
  ^^^^^ Special
        ^ Operator
          ^ Operator
            ^ Operator
              ^ Operator
-               ^ Comment
-                 ^^^^^^^^ Comment
-                          ^^^^^^^ Comment
-                                  ^^^^^^ Comment
-                                         ^^^ Comment
-                                             ^^^^ Comment
-                                                  ^^ Comment
-                                                     ^^^ Comment
-                                                         ^^^^^^^^^^ Comment
-                                                                    ^ Comment
-%MACRO { } } } ( Only one closing brace is a part of the definition )
+%MACRO { } } }
 ^ Operator
  ^^^^^ Special
        ^ Operator
          ^ Operator
-           ^ Type
-             ^ Type
-               ^ Comment
-                 ^^^^ Comment
-                      ^^^ Comment
-                          ^^^^^^^ Comment
-                                  ^^^^^ Comment
-                                        ^^ Comment
-                                           ^ Comment
-                                             ^^^^ Comment
-                                                  ^^ Comment
-                                                     ^^^ Comment
-                                                         ^^^^^^^^^^ Comment
-                                                                    ^ Comment
+           ^ Operator
+             ^ Operator
 %MACRO { { } }
 ^ Operator
  ^^^^^ Special
        ^ Operator
          ^ Operator
            ^ Operator
-             ^ Type
-{ } ( Braces outside of a macro definition )
-^ Type
-  ^ Type
-    ^ Comment
-      ^^^^^^ Comment
-             ^^^^^^^ Comment
-                     ^^ Comment
-                        ^ Comment
-                          ^^^^^ Comment
-                                ^^^^^^^^^^ Comment
-                                           ^ Comment
-x{ x}
-^^ Type
-   ^^ Type
+             ^ Operator
 
-%MACRO { x %NESTED { x } x } ( Last closing brace is not a part of the definition )
+%MACRO { x %NESTED { x } x }
 ^ Operator
  ^^^^^ Special
        ^ Operator
@@ -113,19 +77,7 @@ x{ x}
                      ^ Type
                        ^ Operator
                          ^ Type
-                           ^ Type
-                             ^ Comment
-                               ^^^^ Comment
-                                    ^^^^^^^ Comment
-                                            ^^^^^ Comment
-                                                  ^^ Comment
-                                                     ^^^ Comment
-                                                         ^ Comment
-                                                           ^^^^ Comment
-                                                                ^^ Comment
-                                                                   ^^^ Comment
-                                                                       ^^^^^^^^^^ Comment
-                                                                                  ^ Comment
+                           ^ Operator
 
 ( Macro contents )
 ^ Comment

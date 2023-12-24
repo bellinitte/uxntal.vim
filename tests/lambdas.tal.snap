@@ -1,0 +1,54 @@
+{ }
+^ Operator
+  ^ Operator
+.{ }
+^ Operator
+ ^ Operator
+   ^ Operator
+,{ }
+^ Operator
+ ^ Operator
+   ^ Operator
+;{ }
+^ Operator
+ ^ Operator
+   ^ Operator
+:{ }
+^ Operator
+ ^ Operator
+   ^ Operator
+-{ }
+^ Operator
+ ^ Operator
+   ^ Operator
+={ }
+^ Operator
+ ^ Operator
+   ^ Operator
+_{ }
+^ Operator
+ ^ Operator
+   ^ Operator
+!{ }
+^ Operator
+ ^ Operator
+   ^ Operator
+?{ }
+^ Operator
+ ^ Operator
+   ^ Operator
+
+{ x } x
+^ Operator
+  ^ Type
+    ^ Operator
+      ^ Type
+{x x }x x
+^^ Operator
+   ^ Type
+     ^^ Operator
+        ^ Type
+x{ x} x
+^^ Type
+   ^^ Type
+      ^ Type

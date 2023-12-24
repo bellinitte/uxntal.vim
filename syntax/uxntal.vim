@@ -30,9 +30,6 @@ syntax match uxntalMacroDefintionHeaderRune "\<%" nextgroup=uxntalMacroDefintion
 syntax match uxntalMacroDefintionHeader "\S*" contained
 highlight default link uxntalMacroDefintionHeaderRune uxntalRune
 
-syntax match uxntalMacroDefintionBrace "\<[{}]\S*" contained containedin=uxntalMacroDefintionRegion
-highlight default link uxntalMacroDefintionBrace uxntalRune
-
 syntax match uxntalPadRune "\<[|\$]" nextgroup=uxntalPad
 syntax match uxntalPad "\S*" contained
 highlight default link uxntalPadRune uxntalRune
@@ -54,18 +51,20 @@ syntax match uxntalLiteralNumberRune "\<#" nextgroup=uxntalLiteralNumber
 syntax match uxntalLiteralNumber "\S*" contained
 highlight default link uxntalLiteralNumberRune uxntalRune
 
-syntax match uxntalReferenceRune "\<[.,:;\-=_!?]" nextgroup=uxntalReferenceLabel,uxntalReferenceScopedSublabelRune
+syntax match uxntalReferenceRune "\<[.,:;\-=_!?]" nextgroup=uxntalReferenceLabel,uxntalReferenceScopedSublabelRune,uxntalAnonymousLabel
 syntax match uxntalReferenceLabel "[^/[:space:]]*" contained nextgroup=uxntalReferenceLabelSlash
 syntax match uxntalReferenceLabelSlash "/" contained nextgroup=uxntalReferenceLabelSublabel
 syntax match uxntalReferenceLabelSublabel "\S*" contained
 syntax match uxntalReferenceScopedSublabelRune "&" contained nextgroup=uxntalReferenceScopedSublabel
 syntax match uxntalReferenceScopedSublabel "\S*" contained
+syntax match uxntalAnonymousLabel "{\S*" contained
 highlight default link uxntalReferenceRune uxntalRune
 highlight default link uxntalReferenceLabel uxntalReference
 highlight default link uxntalReferenceLabelSlash uxntalRune
 highlight default link uxntalReferenceLabelSublabel uxntalReference
 highlight default link uxntalReferenceScopedSublabelRune uxntalRune
 highlight default link uxntalReferenceScopedSublabel uxntalReference
+highlight default link uxntalAnonymousLabel uxntalRune
 
 syntax match uxntalStringRune "\<\"" nextgroup=uxntalString
 syntax match uxntalString "\S*" contained
@@ -74,12 +73,15 @@ highlight default link uxntalStringRune uxntalRune
 syntax match uxntalBracket "\<[\[\]]\>"
 highlight default link uxntalBracket uxntalRune
 
+syntax match uxntalBrace "\<[{}]\S*"
+highlight default link uxntalBrace uxntalRune
+
 syntax region uxntalCommentRegion matchgroup=uxntalComment start="\<(\S*" end="\<)\>" fold
 syntax region uxntalCommentRegion matchgroup=uxntalComment start="\<(\>" end="\<)\>" fold contained containedin=uxntalCommentRegion
 
 syntax region uxntalMacroDefintionRegion start="\<%\S*" end="\<}\S*" fold keepend transparent
-syntax region uxntalMacroCommentRegion matchgroup=uxntalComment start="\<(\S*" end="\<)\>" matchgroup=uxntalMacroDefintionBrace end="\<}\S*" fold contained containedin=uxntalMacroDefintionRegion
-syntax region uxntalMacroCommentRegion matchgroup=uxntalComment start="\<(\>" end="\<)\>" matchgroup=uxntalMacroDefintionBrace end="\<}\S*" fold contained containedin=uxntalMacroCommentRegion
+syntax region uxntalMacroCommentRegion matchgroup=uxntalComment start="\<(\S*" end="\<)\>" matchgroup=uxntalBrace end="\<}\S*" fold contained containedin=uxntalMacroDefintionRegion
+syntax region uxntalMacroCommentRegion matchgroup=uxntalComment start="\<(\>" end="\<)\>" matchgroup=uxntalBrace end="\<}\S*" fold contained containedin=uxntalMacroCommentRegion
 
 highlight default link uxntalRune                    Operator
 highlight default link uxntalComment                 Comment
